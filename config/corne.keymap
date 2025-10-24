@@ -30,6 +30,33 @@
             bindings = <&kp COLON &kp W &kp ENTER>;
             label = "NVIM_SAVE_FILE";
         };
+
+        reduce_window_size: reduce_window_size {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(MINUS))>;
+            label = "REDUCE_WINDOW_SIZE";
+        };
+
+        increase_window_size: increase_window_size {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(EQUAL))>;
+            label = "INCREASE_WINDOW_SIZE";
+        };
+
+        nvim_code_action: nvim_code_action {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp SPACE>,
+                <&macro_wait_time 200>,
+                <&kp C>,
+                <&macro_wait_time 200>,
+                <&kp A>;
+
+            label = "NVIM_CODE_ACTION";
+        };
     };
 
     keymap {
@@ -62,10 +89,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &none   &none            &kp N3    &kp N4  &tmux_next_window        &kp N6            &kp N7         &kp N8       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
-&kp LCTRL  &none   &nvim_save_file  &none     &mo 3   &toggle_nvim_terminal    &kp LEFT          &kp DOWN       &kp UP       &kp RIGHT          &kp K_MUTE       &trans
-&kp LSHFT  &trans  &trans           &trans    &trans  &trans                   &kp LC(NUMBER_6)  &kp PAGE_DOWN  &kp PAGE_UP  &trans             &trans           &kp GRAVE
-                                    &kp LGUI  &trans  &kp SPACE                &kp RET           &trans         &kp RALT
+&kp TAB    &none   &none            &kp N3             &kp N4  &tmux_next_window        &none             &reduce_window_size  &increase_window_size  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
+&kp LCTRL  &none   &nvim_save_file  &none              &mo 3   &toggle_nvim_terminal    &kp LEFT          &kp DOWN             &kp UP                 &kp RIGHT          &kp K_MUTE       &trans
+&kp LSHFT  &trans  &trans           &nvim_code_action  &trans  &trans                   &kp LC(NUMBER_6)  &kp PAGE_DOWN        &kp PAGE_UP            &trans             &trans           &kp GRAVE
+                                    &kp LGUI           &trans  &kp SPACE                &kp RET           &trans               &kp RALT
             >;
         };
 
