@@ -57,6 +57,60 @@
 
             label = "NVIM_CODE_ACTION";
         };
+
+        nvim_quit: nvim_quit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp Q &kp ENTER>;
+            label = "NVIM_QUIT";
+        };
+
+        quick_gmail: quick_login {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "QUICK_LOGIN";
+        };
+
+        quick_123456: quick_123456 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6>;
+            label = "QUICK_123456";
+        };
+
+        hotReload: hot_reload {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tmux_next_window>,
+                <&macro_wait_time 200>,
+                <&kp R>,
+                <&macro_wait_time 200>,
+                <&tmux_previous_window>;
+
+            label = "HOT_RELOAD";
+        };
+
+        tmux_previous_window: tmux_previous_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp P>;
+            label = "TMUX_PREVIOUS_WINDOW";
+        };
+
+        hotRestart: hotRestart {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tmux_next_window>,
+                <&macro_wait_time 200>,
+                <&kp LS(R)>,
+                <&macro_wait_time 200>,
+                <&tmux_previous_window>;
+
+            label = "HOTRESTART";
+        };
     };
 
     keymap {
@@ -89,10 +143,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &none   &none            &kp N3             &kp N4  &tmux_next_window        &none             &reduce_window_size  &increase_window_size  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
-&kp LCTRL  &none   &nvim_save_file  &none              &mo 3   &toggle_nvim_terminal    &kp LEFT          &kp DOWN             &kp UP                 &kp RIGHT          &kp K_MUTE       &trans
-&kp LSHFT  &trans  &trans           &nvim_code_action  &trans  &trans                   &kp LC(NUMBER_6)  &kp PAGE_DOWN        &kp PAGE_UP            &trans             &trans           &kp GRAVE
-                                    &kp LGUI           &trans  &kp SPACE                &kp RET           &trans               &kp RALT
+&kp TAB    &nvim_quit  &quick_123456    &quick_gmail       &hotReload  &tmux_next_window        &none             &reduce_window_size  &increase_window_size  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
+&kp LCTRL  &none       &nvim_save_file  &none              &mo 3       &toggle_nvim_terminal    &kp LEFT          &kp DOWN             &kp UP                 &kp RIGHT          &kp K_MUTE       &trans
+&kp LSHFT  &trans      &trans           &nvim_code_action  &trans      &trans                   &kp LC(NUMBER_6)  &kp PAGE_DOWN        &kp PAGE_UP            &trans             &trans           &kp GRAVE
+                                        &kp LGUI           &trans      &kp SPACE                &kp RET           &trans               &kp RALT
             >;
         };
 
