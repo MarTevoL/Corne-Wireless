@@ -9,6 +9,29 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        tmux_next_window: tmux_next_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp N>;
+            label = "TMUX_NEXT_WINDOW";
+        };
+
+        toggle_nvim_terminal: toggle_nvim_terminal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SLASH)>;
+            label = "TOGGLE_NVIM_TERMINAL";
+        };
+
+        nvim_save_file: nvim_save_file {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp W &kp ENTER>;
+            label = "NVIM_SAVE_FILE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -39,10 +62,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4  &kp N5          &kp N6    &kp N7         &kp N8       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &mo 3   &bt BT_SEL 4    &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT          &kp K_MUTE       &trans
-&kp LSHFT   &trans        &trans        &trans        &trans  &trans          &trans    &kp PAGE_DOWN  &kp PAGE_UP  &trans             &trans           &kp GRAVE
-                                        &kp LGUI      &trans  &kp SPACE       &kp RET   &trans         &kp RALT
+&kp TAB    &none   &none            &kp N3    &kp N4  &tmux_next_window        &kp N6            &kp N7         &kp N8       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
+&kp LCTRL  &none   &nvim_save_file  &none     &mo 3   &toggle_nvim_terminal    &kp LEFT          &kp DOWN       &kp UP       &kp RIGHT          &kp K_MUTE       &trans
+&kp LSHFT  &trans  &trans           &trans    &trans  &trans                   &kp LC(NUMBER_6)  &kp PAGE_DOWN  &kp PAGE_UP  &trans             &trans           &kp GRAVE
+                                    &kp LGUI  &trans  &kp SPACE                &kp RET           &trans         &kp RALT
             >;
         };
 
@@ -65,7 +88,7 @@
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &kp EQUAL        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans     &kp DEL
+&trans  &trans  &trans  &trans  &trans  &trans    &kp EQUAL        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none      &kp BACKSPACE
 &trans  &trans  &trans  &trans  &trans  &trans    &kp DOT          &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS   &kp ASTERISK
 &trans  &trans  &trans  &trans  &trans  &trans    &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp MINUS  &kp SLASH
                         &trans  &trans  &trans    &trans           &trans           &trans
