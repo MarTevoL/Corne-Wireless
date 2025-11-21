@@ -184,7 +184,7 @@
             bindings = <
 &kp TAB    &nvim_quit  &quick_123456    &quick_gmail       &hotReload  &tmux_next_window        &none             &reduce_window_size  &increase_window_size  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
 &kp LCTRL  &none       &nvim_save_file  &none              &mo 3       &toggle_nvim_terminal    &kp LEFT          &kp DOWN             &kp UP                 &kp RIGHT          &kp K_MUTE       &kp CAPSLOCK
-&kp LSHFT  &trans      &trans           &nvim_code_action  &trans      &trans                   &kp LC(NUMBER_6)  &kp PAGE_DOWN        &kp PAGE_UP            &trans             &mo 4            &kp GRAVE
+&kp LSHFT  &trans      &trans           &nvim_code_action  &to 3       &tog 3                   &kp LC(NUMBER_6)  &kp PAGE_DOWN        &kp PAGE_UP            &trans             &mo 4            &kp GRAVE
                                         &kp LGUI           &trans      &kp SPACE                &trans            &trans               &kp RALT
             >;
         };
