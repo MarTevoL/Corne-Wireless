@@ -115,14 +115,14 @@
         prev_tab: prev_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RS(RCTRL) &kp TAB>;
+            bindings = <&kp RS(RC(TAB))>;
             label = "PREV_TAB";
         };
 
         next_tab: next_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL &kp TAB>;
+            bindings = <&kp RC(TAB)>;
             label = "NEXT_TAB";
         };
     };
