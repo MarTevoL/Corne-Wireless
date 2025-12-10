@@ -206,7 +206,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &nvim_quit  &quick_123456    &quick_gmail       &hotReload  &tmux_next_window        &trans            &reduce_window_size  &increase_window_size  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
+&kp TAB    &nvim_quit  &quick_123456    &quick_gmail       &hotReload  &tmux_next_window        &kp BACKSPACE     &reduce_window_size  &increase_window_size  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
 &kp LCTRL  &trans      &nvim_save_file  &mo 4              &mo 3       &toggle_nvim_terminal    &kp LEFT          &kp DOWN             &kp UP                 &kp RIGHT          &kp K_MUTE       &kp CAPSLOCK
 &kp LSHFT  &trans      &trans           &nvim_code_action  &tog 3      &trans                   &kp LC(NUMBER_6)  &kp PAGE_DOWN        &kp PAGE_UP            &trans             &mo 4            &kp GRAVE
                                         &kp LGUI           &trans      &kp SPACE                &trans            &trans               &kp RALT
