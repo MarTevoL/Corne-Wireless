@@ -200,7 +200,7 @@
 
             bindings = <
 &kp TAB                                &kp Q  &kp W                               &kp E              &kp R              &kp T                &kp Y                                          &kp U  &kp I      &kp O       &kp P     &kp BSPC
-&hold_or_tap_preferred_hold LCTRL ESC  &kp A  &hold_or_tap_balanced LEFT_SHIFT S  &layer_or_tap 3 D  &layer_or_tap 2 F  &layer_or_tap 4 G    &kp H                                          &kp J  &kp K      &kp L       &kp SEMI  &hold_or_tap_balanced RCTRL SQT
+&hold_or_tap_preferred_hold LCTRL ESC  &kp A  &hold_or_tap_balanced LEFT_SHIFT S  &layer_or_tap 2 D  &layer_or_tap 3 F  &layer_or_tap 4 G    &kp H                                          &kp J  &kp K      &kp L       &kp SEMI  &hold_or_tap_balanced RCTRL SQT
 &kp LSHFT                              &kp Z  &kp X                               &kp C              &kp V              &kp B                &kp N                                          &kp M  &kp COMMA  &kp PERIOD  &kp FSLH  &hold_or_tap_preferred_hold RIGHT_SHIFT ESC
                                                                                   &kp LGUI           &mo 1              &kp SPACE            &hold_or_tap_preferred_hold RIGHT_COMMAND RET  &mo 2  &kp RALT
             >;
@@ -217,7 +217,7 @@
 
             bindings = <
 &kp TAB    &nvim_quit  &quick_123456    &quick_gmail       &hotReload  &tmux_next_window        &trans            &kp BACKSPACE  &trans       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
-&kp LCTRL  &trans      &nvim_save_file  &mo 4              &mo 3       &toggle_nvim_terminal    &kp LEFT          &kp DOWN       &kp UP       &kp RIGHT          &kp K_MUTE       &kp CAPSLOCK
+&kp LCTRL  &trans      &nvim_save_file  &trans             &trans      &toggle_nvim_terminal    &kp LEFT          &kp DOWN       &kp UP       &kp RIGHT          &kp K_MUTE       &kp CAPSLOCK
 &kp LSHFT  &trans      &trans           &nvim_code_action  &tog 3      &trans                   &kp LC(NUMBER_6)  &kp PAGE_DOWN  &kp PAGE_UP  &trans             &mo 4            &kp GRAVE
                                         &kp LGUI           &trans      &kp SPACE                &trans            &trans         &kp RALT
             >;
